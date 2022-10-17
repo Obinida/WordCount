@@ -59,7 +59,6 @@ public class WordCounter implements WordFrequencyAnalyzer {
     }
 
     private String[] textToStringArray(String text) {
-        String lowerCase = text.toLowerCase();
-        return lowerCase.split(" ");
+        return text.replaceAll("[^a-zA-Z ]", "").toLowerCase().split("\\s+");
     }
 }
